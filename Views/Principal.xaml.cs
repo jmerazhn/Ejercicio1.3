@@ -29,7 +29,7 @@ public partial class Principal : ContentPage
     {
         base.OnAppearing();
 
-        //listadatos.ItemsSource = await db.ListaDatos();
+        listadatos.ItemsSource = await App.dbdatos.ListaDatos();
     }
 
     private async void toolagrega_Clicked(object sender, EventArgs e)
