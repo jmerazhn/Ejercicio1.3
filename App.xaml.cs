@@ -11,7 +11,7 @@ namespace Ejercicio1._3
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new Datos());
+            MainPage = new NavigationPage(new Principal());
         }
     }
 }

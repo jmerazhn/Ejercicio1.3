@@ -5,7 +5,7 @@ namespace Ejercicio1._3.Views;
 public partial class Principal : ContentPage
 {
 
-    SQLiteDbContext db;
+    
 	public Principal()
 	{
 		InitializeComponent();
@@ -28,9 +28,8 @@ public partial class Principal : ContentPage
     protected override async void OnAppearing()
     {
         base.OnAppearing();
-        
 
-        listadatos.ItemsSource = await App.DBdatos.ListaDatos();
+        //listadatos.ItemsSource = await db.ListaDatos();
     }
 
     private async void toolagrega_Clicked(object sender, EventArgs e)

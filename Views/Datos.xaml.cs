@@ -1,7 +1,10 @@
+using Ejercicio1._3.Controllers;
+
 namespace Ejercicio1._3.Views;
 
 public partial class Datos : ContentPage
 {
+    DatosDB db=new DatosDB();
 	public Datos()
 	{
 		InitializeComponent();
@@ -18,7 +21,7 @@ public partial class Datos : ContentPage
             Direccion = direccion.Text
         };
 
-        if (await App.DBdatos.StoreDatos(data) > 0)
+        if (await db.StoreDatos(data) > 0)
         {
             await DisplayAlert("Aviso", "Ingresado", "Ok");
             await Navigation.PushAsync(new Views.Principal());

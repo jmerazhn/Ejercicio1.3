@@ -1,4 +1,5 @@
-﻿using SQLite;
+﻿using Ejercicio1._3.Models;
+using SQLite;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +10,7 @@ namespace Ejercicio1._3.Controllers
 {
     public class DatosDB
     {
-        readonly SQLiteAsyncConnection _connection;
+        private SQLiteAsyncConnection _connection;
 
         public DatosDB()
         { }
@@ -22,6 +23,7 @@ namespace Ejercicio1._3.Controllers
                 return;
             }
 
+            _connection = new SQLiteAsyncConnection(Config.DatabasePath, Config.Flags);
             var result = await _connection.CreateTableAsync<Models.Datos>();
 
 

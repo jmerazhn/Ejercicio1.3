@@ -1,7 +1,10 @@
+using Ejercicio1._3.Controllers;
+
 namespace Ejercicio1._3.Views;
 
 public partial class UpdateDelete : ContentPage
 {
+    DatosDB db = new DatosDB();
 	public UpdateDelete()
 	{
 		InitializeComponent();
@@ -19,7 +22,7 @@ public partial class UpdateDelete : ContentPage
             Direccion = direccion.Text
         };
 
-        if (await App.DBdatos.StoreDatos(data) > 0)
+        if (await db.StoreDatos(data) > 0)
         {
             await DisplayAlert("Alerta", "Datos actualizados", "Ok");
 
@@ -54,7 +57,7 @@ public partial class UpdateDelete : ContentPage
                 Id = Int32.Parse(id.Text)
             };
 
-            if (await App.DBdatos.DeleteDatos(data) > 0)
+            if (await db.DeleteDatos(data) > 0)
             {
                 await DisplayAlert("Alerta", "Datos eliminados", "Ok");
 

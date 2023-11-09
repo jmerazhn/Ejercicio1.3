@@ -9,6 +9,7 @@ namespace Ejercicio1._3.Models
     internal class Config
     {
         public static string DBName = "Basesqlite.db3";
+        public static string DatabasePath => Path.Combine(FileSystem.AppDataDirectory, DBName);
 
         public const SQLite.SQLiteOpenFlags Flags =
         // open the database in read/write mode
